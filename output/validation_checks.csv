@@ -1,0 +1,14 @@
+Check,Result,Detail
+Par bond prices at 100,PASS,price=100.0000000000
+Analytic duration = finite-difference duration (all 8 bonds),PASS,max diff 1.5e-05 yrs
+Sum of key-rate DV01s = parallel DV01,PASS,"63,758 vs 63,758"
+"Bump DV01 = MV x duration / 10,000",PASS,max rel diff 9.73e-07
+Duration + convexity explains +100bp full-revaluation P&L within 1%,PASS,"approx -6,023,196 vs full -6,042,227"
+Position P&L sums to portfolio P&L (historical),PASS,every day reconciles
+Stress P&L decomposes into rates + credit + cross term,PASS,all scenarios
+ES(97.5%) >= VaR(97.5%),PASS,"ES 824,057, VaR97.5 676,261"
+Parametric VaR within 30% of historical VaR (95%),PASS,"528,489 vs 513,537"
+Component VaR sums to 100%,PASS,1.000000
+Rates-only + credit-only P&L close to full P&L (historical),PASS,"max cross term $3,547"
+No missing data in VaR window,PASS,747 days
+Portfolio NAV within 1% of $100M target,PASS,"$100,000,624"
